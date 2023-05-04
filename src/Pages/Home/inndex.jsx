@@ -1,8 +1,8 @@
 
-function inndex() {
+function Home() {
   return (
-    <div>inndex</div>
+    <div>Home</div>
   )
 }
 
-export default inndex
+export default Home
