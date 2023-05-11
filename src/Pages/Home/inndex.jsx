@@ -9,7 +9,6 @@ function Home () {
   const setFetch = async () => {
     const resp = await fetch(URL)
     const data = await resp.json()
-    console.log(data)
     setItems(data)
   }
 
