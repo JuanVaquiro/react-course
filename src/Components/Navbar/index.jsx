@@ -94,7 +94,7 @@ function Navbar() {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/SingIn"
+          <NavLink to="/sell"
             className={({ isActive }) =>
               isActive ? activeStyle : undefined
             }
