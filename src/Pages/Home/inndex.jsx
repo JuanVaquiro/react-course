@@ -1,11 +1,37 @@
+import { useEffect, useState } from "react";
 import Cart from "../../Components/Card";
 import Layout from "../../Components/Layout";
 
+const URL = 'https://api.escuelajs.co/api/v1/products'
+
 function Home() {
+  const [items, setItems] = useState(null)
+  const setFetch = async () => {
+    const resp = await fetch(URL)
+    const data = await resp.json()
+    console.log(data)
+    setItems(data)
+  }
+
+  useEffect(() => {
+    setFetch()
+  }, [])
+
   return (
     <Layout>
-      Home
-      <Cart />
+      <div className="grid gap-4 grid-cols-4 w-full max-w-screen-lg">
+        {
+          items?.map(item => (
+            <Cart
+              key={item.id}
+              name={item.category.name}
+              image={item.images[0]}
+              title={item.title}
+              price={item.price}
+            />
+          ))
+        }
+      </div>
     </Layout>
   )
 }
