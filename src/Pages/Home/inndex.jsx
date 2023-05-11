@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import Cart from '../../Components/Card'
 import Layout from '../../Components/Layout'
+import ProductDetail from '../../Components/ProductDetail'
 
 const URL = 'https://api.escuelajs.co/api/v1/products'
 
@@ -31,6 +32,7 @@ function Home () {
           ))
         }
       </div>
+      <ProductDetail />
     </Layout>
   )
 }

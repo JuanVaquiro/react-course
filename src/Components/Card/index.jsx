@@ -1,8 +1,8 @@
 import { useContext } from 'react'
-import { ShoppingCartContex } from '../../Context'
+import { ShoppingCartContext } from '../../Context'
 
 function Cart ({ name, image, title, price }) {
-  const { count, setCount } = useContext(ShoppingCartContex)
+  const { count, setCount } = useContext(ShoppingCartContext)
   return (
     <div className='bg-white cursor-pointer w-56 h-60 rounded-lg'>
       <figure className='relative mb-2 w-full h-4/5'>
