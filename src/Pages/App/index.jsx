@@ -1,4 +1,5 @@
 import { useRoutes, BrowserRouter } from 'react-router-dom'
+import Navbar from '../../Components/Navbar'
 import Home from '../Home/inndex'
 import MyAccount from '../MyAccount'
 import MyOrder from '../MyOrder/inde'
@@ -41,6 +42,7 @@ function App() {
   return (
     <BrowserRouter>
       <AppRouters />
+      <Navbar />
     </BrowserRouter>
   )
 }

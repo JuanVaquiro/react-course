@@ -1,7 +1,10 @@
+import Layout from "../../Components/Layout"
 
 function MyOrder() {
   return (
-    <div>MyOrder</div>
+    <Layout>
+      MY Order
+    </Layout>
   )
 }
 
