@@ -1,7 +1,6 @@
-import Layout from "../../Components/Layout"
+import Layout from '../../Components/Layout'
 
-
-function MyAccount() {
+function MyAccount () {
   return (
     <Layout>
       MyAccount

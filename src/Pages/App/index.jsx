@@ -9,7 +9,7 @@ import SignIn from '../Signin'
 import './App.css'
 
 const AppRouters = () => {
-  let routes = useRoutes([
+  const routes = useRoutes([
     {
       path: '/',
       element: <Home />
@@ -33,12 +33,12 @@ const AppRouters = () => {
     {
       path: '/*',
       element: <NotFound />
-    },
+    }
   ])
   return routes
 }
 
-function App() {
+function App () {
   return (
     <BrowserRouter>
       <AppRouters />

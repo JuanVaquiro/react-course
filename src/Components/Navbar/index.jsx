@@ -1,63 +1,58 @@
-import { NavLink } from "react-router-dom"
+import { NavLink } from 'react-router-dom'
 
-function Navbar() {
+function Navbar () {
   const activeStyle = 'underline underline-offset-4'
   return (
-    <nav className="flex justify-between items-center fixed z-10 top-0 w-full py-4 px-8 text-lg font-light bg-slate-50/90">
-      <ul className="flex items-center gap-3">
-        <li className="font-semibold text-2xl">
+    <nav className='flex justify-between items-center fixed z-10 top-0 w-full py-4 px-8 text-lg font-light bg-slate-50/90'>
+      <ul className='flex items-center gap-3'>
+        <li className='font-semibold text-2xl'>
           <NavLink
-            to="/"
+            to='/'
           >
             Banji
           </NavLink>
         </li>
         <li>
           <NavLink
-            to="/todo"
+            to='/todo'
             className={({ isActive }) =>
-              isActive ? activeStyle : undefined
-            }
+              isActive ? activeStyle : undefined}
           >
             Todo
           </NavLink>
         </li>
         <li>
           <NavLink
-            to="/Camisas"
+            to='/Camisas'
             className={({ isActive }) =>
-              isActive ? activeStyle : undefined
-            }
+              isActive ? activeStyle : undefined}
           >
             Camisas
           </NavLink>
         </li>
         <li>
           <NavLink
-            to="/Pantalones"
+            to='/Pantalones'
             className={({ isActive }) =>
-              isActive ? activeStyle : undefined
-            }
+              isActive ? activeStyle : undefined}
           >
             Pantalones
           </NavLink>
         </li>
         <li>
           <NavLink
-            to="/Hombre"
+            to='/Hombre'
             className={({ isActive }) =>
-              isActive ? activeStyle : undefined
-            }
+              isActive ? activeStyle : undefined}
           >
             Hombre
           </NavLink>
         </li>
         <li>
           <NavLink
-            to="/Mujer"
+            to='/Mujer'
             className={({ isActive }) =>
-              isActive ? activeStyle : undefined
-            }
+              isActive ? activeStyle : undefined}
           >
 
             Mujer
@@ -65,39 +60,39 @@ function Navbar() {
         </li>
       </ul>
       {/* seg navigate */}
-      <ul className="flex items-center gap-3">
+      <ul className='flex items-center gap-3'>
         <li>
-          <NavLink to="/MyOrders"
+          <NavLink
+            to='/MyOrders'
             className={({ isActive }) =>
-              isActive ? activeStyle : undefined
-            }
+              isActive ? activeStyle : undefined}
           >
             Mis pedidos
           </NavLink>
         </li>
         <li>
-          <NavLink to="/MyAccount"
+          <NavLink
+            to='/MyAccount'
             className={({ isActive }) =>
-              isActive ? activeStyle : undefined
-            }
+              isActive ? activeStyle : undefined}
           >
             Mi Cuenta
           </NavLink>
         </li>
         <li>
-          <NavLink to="/SingIn"
+          <NavLink
+            to='/SingIn'
             className={({ isActive }) =>
-              isActive ? activeStyle : undefined
-            }
+              isActive ? activeStyle : undefined}
           >
             Sign in
           </NavLink>
         </li>
         <li>
-          <NavLink to="/sell"
+          <NavLink
+            to='/sell'
             className={({ isActive }) =>
-              isActive ? activeStyle : undefined
-            }
+              isActive ? activeStyle : undefined}
           >
             🛒 1
           </NavLink>

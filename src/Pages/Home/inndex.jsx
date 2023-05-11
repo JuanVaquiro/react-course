@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
-import Cart from "../../Components/Card";
-import Layout from "../../Components/Layout";
+import { useEffect, useState } from 'react'
+import Cart from '../../Components/Card'
+import Layout from '../../Components/Layout'
 
 const URL = 'https://api.escuelajs.co/api/v1/products'
 
-function Home() {
+function Home () {
   const [items, setItems] = useState(null)
   const setFetch = async () => {
     const resp = await fetch(URL)
@@ -19,7 +19,7 @@ function Home() {
 
   return (
     <Layout>
-      <div className="grid gap-4 grid-cols-4 w-full max-w-screen-lg">
+      <div className='grid gap-4 grid-cols-4 w-full max-w-screen-lg'>
         {
           items?.map(item => (
             <Cart

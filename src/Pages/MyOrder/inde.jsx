@@ -1,6 +1,6 @@
-import Layout from "../../Components/Layout"
+import Layout from '../../Components/Layout'
 
-function MyOrder() {
+function MyOrder () {
   return (
     <Layout>
       MY Order
