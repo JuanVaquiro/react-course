@@ -11,6 +11,7 @@ function Home () {
     const resp = await fetch(URL)
     const data = await resp.json()
     setItems(data)
+    console.log(data)
   }
 
   useEffect(() => {
@@ -30,6 +31,7 @@ function Home () {
               image={item.images[0]}
               title={item.title}
               price={item.price}
+              description={item.description}
             />
           ))
         }
