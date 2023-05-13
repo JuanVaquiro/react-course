@@ -19,7 +19,9 @@ function Home () {
 
   return (
     <Layout>
-      <div className='grid gap-4 grid-cols-4 w-full max-w-screen-lg'>
+      <div
+        className='grid gap-4 grid-cols-4 w-full max-w-screen-lg'
+      >
         {
           items?.map(item => (
             <Cart
