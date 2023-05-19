@@ -6,6 +6,9 @@ function ShoppingCartProvider ({ children }) {
   // Shopping Cart : increment quantity
   const [count, setCount] = useState(0)
 
+  // Shopping Cart : Add products to cart
+  const [cartProducts, setCartProducts] = useState([])
+
   // Product Detail : Open/Close
   const [isProductDatail, setIsProductDatail] = useState(false)
   const openProductDetail = () => setIsProductDatail(true)
@@ -13,6 +16,7 @@ function ShoppingCartProvider ({ children }) {
 
   // Product Detail : Show product
   const [productToShow, setProductToShow] = useState({})
+  console.log(cartProducts)
 
   return (
     <ShoppingCartContext.Provider
@@ -23,7 +27,10 @@ function ShoppingCartProvider ({ children }) {
         openProductDetail,
         closeProductDetail,
         productToShow,
-        setProductToShow
+        setProductToShow,
+        cartProducts,
+        setCartProducts
+
       }}
     >
       {children}
