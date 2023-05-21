@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { ShoppingBagIcon } from '@heroicons/react/24/solid'
 import { ShoppingCartContext } from '../../Context'
 
-function Navbar () {
+function Navbar() {
   const { count } = useContext(ShoppingCartContext)
   const activeStyle = 'underline underline-offset-4'
   return (
@@ -18,50 +18,32 @@ function Navbar () {
         </li>
         <li>
           <NavLink
-            to='/todo'
+            to='/'
             className={({ isActive }) =>
               isActive ? activeStyle : undefined}
           >
-            Todo
+            All
           </NavLink>
         </li>
         <li>
           <NavLink
-            to='/Camisas'
+            to='/Pants'
             className={({ isActive }) =>
               isActive ? activeStyle : undefined}
           >
-            Camisas
+            Pants
           </NavLink>
         </li>
         <li>
           <NavLink
-            to='/Pantalones'
+            to='/Shirts'
             className={({ isActive }) =>
               isActive ? activeStyle : undefined}
           >
-            Pantalones
+            Shirts
           </NavLink>
         </li>
-        <li>
-          <NavLink
-            to='/Hombre'
-            className={({ isActive }) =>
-              isActive ? activeStyle : undefined}
-          >
-            Hombre
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to='/Mujer'
-            className={({ isActive }) =>
-              isActive ? activeStyle : undefined}
-          >
 
-            Mujer
-          </NavLink>
-        </li>
       </ul>
       {/* seg navigate */}
       <ul className='flex items-center gap-3'>
@@ -71,7 +53,7 @@ function Navbar () {
             className={({ isActive }) =>
               isActive ? activeStyle : undefined}
           >
-            Mis pedidos
+            My Orders
           </NavLink>
         </li>
         <li>
@@ -80,7 +62,7 @@ function Navbar () {
             className={({ isActive }) =>
               isActive ? activeStyle : undefined}
           >
-            Mi Cuenta
+            My Account
           </NavLink>
         </li>
         <li>
