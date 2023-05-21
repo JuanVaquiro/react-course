@@ -11,7 +11,6 @@ function Home () {
     const resp = await fetch(URL)
     const data = await resp.json()
     setItems(data)
-    console.log(data)
   }
 
   useEffect(() => {
