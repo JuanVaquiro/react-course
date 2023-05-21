@@ -27,6 +27,7 @@ function Home () {
           items?.map(item => (
             <Cart
               key={item.id}
+              id={item.id}
               name={item.category.name}
               image={item.images[0]}
               title={item.title}

@@ -1,6 +1,7 @@
 import { useRoutes, BrowserRouter } from 'react-router-dom'
 import ShoppingCartProvider from '../../Context'
 import Navbar from '../../Components/Navbar'
+import CheckoutSideMenu from '../../Components/CheckoutSideMenu'
 import Home from '../Home/inndex'
 import MyAccount from '../MyAccount'
 import MyOrder from '../MyOrder/inde'
@@ -28,6 +29,10 @@ const AppRouters = () => {
       element: <MyOrders />
     },
     {
+      path: '/MyOrders/last',
+      element: <MyOrders />
+    },
+    {
       path: '/SignIn',
       element: <SignIn />
     },
@@ -45,6 +50,7 @@ function App () {
       <BrowserRouter>
         <AppRouters />
         <Navbar />
+        <CheckoutSideMenu />
       </BrowserRouter>
     </ShoppingCartProvider>
   )
