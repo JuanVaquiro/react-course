@@ -9,6 +9,9 @@ function ShoppingCartProvider ({ children }) {
   const [filterItmes, setFilterItmes] = useState(null)
   // GET BY TITLES
   const [searchBytitle, setSearchBytitle] = useState(null)
+  // GET BY category
+  const [searchByCategory, setSearchByCategory] = useState(null)
+  console.log(searchByCategory)
 
   const setFetch = async () => {
     const resp = await fetch(URL)
@@ -24,9 +27,36 @@ function ShoppingCartProvider ({ children }) {
       item.title.toLowerCase().includes(searchBytitle.toLowerCase()))
   }
 
+  const filterItmesByCategory = (items, searchByCategory) => {
+    return items?.filter(item =>
+      item.category.name.toLowerCase().includes(searchByCategory.toLowerCase()))
+  }
+
+  const filterBy = (searchType, items, searchBytitle, searchByCategory) => {
+    if (searchType === 'BY_TITLE') {
+      return filterItmesByTitle(items, searchBytitle)
+    }
+    if (searchType === 'BY_CATEGORY') {
+      return filterItmesByCategory(items, searchByCategory)
+    }
+    if (searchType === 'BY_TITLE_AND_CATEGORY') {
+      return filterItmesByCategory(items, searchByCategory).filter(item =>
+        item.title.toLowerCase().includes(searchBytitle.toLowerCase()))
+    }
+    if (!searchType) {
+      return items
+    }
+  }
+
   useEffect(() => {
-    if (searchBytitle) setFilterItmes(filterItmesByTitle(items, searchBytitle))
-  }, [items, searchBytitle])
+    if (searchBytitle && searchByCategory) setFilterItmes(filterBy('BY_TITLE_AND_CATEGORY', items, searchBytitle, searchByCategory))
+    if (searchBytitle && !searchByCategory) setFilterItmes(filterBy('BY_TITLE', items, searchBytitle, searchByCategory))
+    if (searchBytitle && searchByCategory) setFilterItmes(filterBy('BY_CATEGORY', items, searchBytitle, searchByCategory))
+    if (!searchBytitle && !searchByCategory) setFilterItmes(filterBy(null, items, searchBytitle, searchByCategory))
+    return () => {
+      setSearchBytitle(null)
+    }
+  }, [items, searchBytitle, searchByCategory])
 
   // Shopping Cart : increment quantity
   const [count, setCount] = useState(0)
@@ -57,6 +87,8 @@ function ShoppingCartProvider ({ children }) {
         setItems,
         searchBytitle,
         setSearchBytitle,
+        searchByCategory,
+        setSearchByCategory,
         filterItmes,
         setFilterItmes,
         count,

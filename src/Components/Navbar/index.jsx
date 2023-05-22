@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom'
 import { ShoppingBagIcon } from '@heroicons/react/24/solid'
 import { ShoppingCartContext } from '../../Context'
 
-function Navbar() {
-  const { count } = useContext(ShoppingCartContext)
+function Navbar () {
+  const { count, setSearchByCategory } = useContext(ShoppingCartContext)
   const activeStyle = 'underline underline-offset-4'
   return (
     <nav className='flex justify-between items-center fixed z-10 top-0 w-full py-4 px-8 text-lg font-light bg-slate-50/90'>
@@ -27,20 +27,32 @@ function Navbar() {
         </li>
         <li>
           <NavLink
-            to='/Pants'
+            to='/Electronics'
             className={({ isActive }) =>
               isActive ? activeStyle : undefined}
+            onClick={() => { setSearchByCategory('Electronics') }}
           >
-            Pants
+            Electronics
           </NavLink>
         </li>
         <li>
           <NavLink
-            to='/Shirts'
+            to='/Clothes'
             className={({ isActive }) =>
               isActive ? activeStyle : undefined}
+            onClick={() => { setSearchByCategory('Clothes') }}
           >
-            Shirts
+            Clothes
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to='/Others'
+            className={({ isActive }) =>
+              isActive ? activeStyle : undefined}
+            onClick={() => { setSearchByCategory('Others') }}
+          >
+            Others
           </NavLink>
         </li>
 

@@ -17,6 +17,18 @@ const AppRouters = () => {
       element: <Home />
     },
     {
+      path: '/Electronics',
+      element: <Home />
+    },
+    {
+      path: '/Clothes',
+      element: <Home />
+    },
+    {
+      path: '/Others',
+      element: <Home />
+    },
+    {
       path: '/MyAccount',
       element: <MyAccount />
     },
@@ -48,7 +60,7 @@ const AppRouters = () => {
   return routes
 }
 
-function App () {
+function App() {
   return (
     <ShoppingCartProvider>
       <BrowserRouter>

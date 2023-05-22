@@ -5,31 +5,11 @@ import Layout from '../../Components/Layout'
 import ProductDetail from '../../Components/ProductDetail'
 
 function Home () {
-  const { items, searchBytitle, setSearchBytitle, filterItmes } = useContext(ShoppingCartContext)
+  const { setSearchBytitle, filterItmes } = useContext(ShoppingCartContext)
   const renderView = () => {
-    if (searchBytitle?.length > 0) {
-      if (filterItmes?.length > 0) {
-        return (
-          filterItmes?.map(item => (
-            <Cart
-              key={item.id}
-              id={item.id}
-              name={item.category.name}
-              image={item.images[0]}
-              title={item.title}
-              price={item.price}
-              description={item.description}
-            />
-          ))
-        )
-      } else {
-        return (
-          <div>We don't have anything</div>
-        )
-      }
-    } else {
+    if (filterItmes?.length > 0) {
       return (
-        items?.map(item => (
+        filterItmes?.map(item => (
           <Cart
             key={item.id}
             id={item.id}
@@ -40,6 +20,10 @@ function Home () {
             description={item.description}
           />
         ))
+      )
+    } else {
+      return (
+        <div>We don't have anything</div>
       )
     }
   }
