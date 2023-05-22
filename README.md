@@ -2,7 +2,7 @@
 Un E-commerce o Tienda Online con React.js, 
 
 ## Demo
-https://app.netlify.com/teams/juanvaquiro/overview
+https://dulcet-gnome-39817c.netlify.app/
 
 ## Tech Stack
 
